@@ -1,22 +1,19 @@
-const api = {
+const API = {
 	__: 'api',
-	env: 'dev',
-	version: 'v1',
-	action: {
-		create: 'add',
-		fetch: 'get',
-		fetchAll: 'all',
-		update: 'edit',
-		delete: 'remove'
+	VERSION: 'v1',
+	ACTION: {
+		CREATE: 'add',
+		FETCH: 'get',
+		FETCH_ALL: 'all',
+		UPDATE: 'edit',
+		DELETE: 'remove'
 	}
-}
-
-function apiPrefix() {
-	return `/${api.__}/${api.version}/`;
-}
+};
 
 module.exports = {
-	config,
-	api,
-	apiPrefix
-}
+	ENV: process.env.NODE_ENV || 'dev',
+	PORT: process.env.PORT || 9000,
+	API_PREFIX: () => {
+		return `/${API.__}/${API.VERSION}/`;
+	}
+};

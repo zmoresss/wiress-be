@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server.ts",
-    "dev": "nodemon server.ts"
+    "dev": "nodemon ./server.ts --exec babel-node -e js"
   },
   "keywords": [],
   "author": "",
